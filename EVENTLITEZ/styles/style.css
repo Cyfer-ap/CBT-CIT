@@ -1,0 +1,191 @@
+/* Basic reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin-bottom: 4rem; /* Space for the fixed footer */
+}
+
+#create-event {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+input, button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* Event list styles */
+#event-list {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 2rem;
+}
+
+#event-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#event-list li {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #555;
+    text-align: left;
+    width: 100%;
+    font-weight: 600;
+}
+
+/* Ensure each div has a fixed size and does not adjust */
+#event-list li .name,
+#event-list li .date,
+#event-list li .time,
+#event-list li .location {
+    width: 20%; /* Adjust the width to make them take equal space */
+}
+
+/* Serial number styling - use only required space */
+#event-list li .serial {
+    flex-shrink: 0;  /* Prevent shrinking */
+    margin-right: 10px; /* Space between serial and next part */
+    font-size: 1rem;
+    font-weight: bold;
+    background: #bbdefb;
+    width: 40px;  /* Reduce width to just accommodate serial number */
+    text-align: center;
+}
+
+/* Make each part of the event (name, date, time, location) take equal space */
+#event-list li div {
+    flex-grow: 1;
+    padding: 0.5rem;
+    text-align: center;
+    height: 20px;  /* Fix the height for each detail box */
+    overflow: hidden;  /* Ensure content doesn't overflow */
+}
+
+/* Highlight each part with different background colors */
+#event-list li div.name {
+    background: #c8e6c9; /* Light green */
+}
+
+#event-list li div.date {
+    background: #ffecb3; /* Light yellow */
+}
+
+#event-list li div.time {
+    background: #bbdefb; /* Light blue */
+}
+
+#event-list li div.location {
+    background: #fff9c4; /* Light yellow */
+}
+
+/* Style for the Edit and Delete buttons */
+#event-list li button {
+    background: #e53935;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+#event-list li button.edit {
+    background: #ff9800;
+}
+
+#event-list li button:hover {
+    background: #d32f2f;
+}
+
+#event-list li button.edit:hover {
+    background: #fb8c00;
+}
+
+/* Copyright footer at bottom left */
+footer {
+    left: 10px;
+    bottom: 10px;
+    font-size: 0.8rem;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #create-event {
+        padding: 2rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+    }
+
+    #event-list li {
+        font-size: 0.9rem;
+    }
+}
